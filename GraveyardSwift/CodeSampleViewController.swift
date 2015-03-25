@@ -21,7 +21,7 @@ extension UIColor
 	}
 }
 
-class CodeSampleViewController: UICollectionViewController
+class CodeSampleViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout
 {
 	private let reuseIdentifier = "CodeSampleCell"
 	let data = ["One", "Two", "Three", "Four"]
@@ -45,4 +45,14 @@ class CodeSampleViewController: UICollectionViewController
 		cell.backgroundColor = UIColor.randomColour()
 		return cell
 	}
+	
+	
+	// ===================================================
+	// MARK: UICollectionViewDelegateFlowLayout
+	// ===================================================
+	
+	func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+		return UIEdgeInsetsMake(50.0, 20.0, 50.0, 20.0)
+	}
+	
 }
