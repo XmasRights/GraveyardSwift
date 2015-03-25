@@ -10,13 +10,13 @@ import UIKit
 
 extension UIColor
 {
-	private class func random() -> CGFloat
-	{
-		return CGFloat(arc4random()) / CGFloat(UINT32_MAX)
-	}
-	
 	class func randomColour() -> UIColor
 	{
+		func random() -> CGFloat
+		{
+			return CGFloat(arc4random()) / CGFloat(UINT32_MAX)
+		}
+		
 		return UIColor(red: random(), green: random(), blue: random(), alpha: 1.0)
 	}
 }
