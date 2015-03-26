@@ -24,7 +24,7 @@ extension UIColor
 class CodeSampleViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout
 {
 	private let reuseIdentifier = "CodeSampleCell"
-	let data = ["One", "Two", "Three", "Four"]
+	let data = [CodeSampleCellGenerator](count: 20, repeatedValue: EmptySample())
 	
 	// ===================================================
 	// MARK: UICollectionViewDataSource
@@ -41,8 +41,9 @@ class CodeSampleViewController: UICollectionViewController, UICollectionViewDele
 	
 	override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
 	{
-		let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as UICollectionViewCell
+		var cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as CodeSampleCell
 		cell.backgroundColor = UIColor.randomColour()
+		data[indexPath.row].formatCell(&cell)
 		return cell
 	}
 	

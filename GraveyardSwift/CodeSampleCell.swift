@@ -11,4 +11,10 @@ import UIKit
 class CodeSampleCell: UICollectionViewCell
 {
 	@IBOutlet weak var imageView: UIImageView!
+	@IBOutlet weak var textLabel: UILabel!
+}
+
+protocol CodeSampleCellGenerator
+{
+	func formatCell(inout cell: CodeSampleCell)
 }
