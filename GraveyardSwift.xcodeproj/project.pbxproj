@@ -13,6 +13,11 @@
 		4BBCDF4D1AC34511008D0D9F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4BBCDF4C1AC34511008D0D9F /* Images.xcassets */; };
 		4BBCDF501AC34511008D0D9F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4BBCDF4E1AC34511008D0D9F /* LaunchScreen.xib */; };
 		4BBCDF5C1AC34511008D0D9F /* GraveyardSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4BBCDF5B1AC34511008D0D9F /* GraveyardSwiftTests.swift */; };
+		6A6C11771AC77B7500355144 /* TemporaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6C11761AC77B7500355144 /* TemporaryViewController.swift */; };
+		6A6C11791AC77BC000355144 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6C11781AC77BC000355144 /* Extensions.swift */; };
+		6A6C117B1AC77C2400355144 /* TransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6C117A1AC77C2400355144 /* TransitionDelegate.swift */; };
+		6A6C117D1AC77F2500355144 /* CodeSampleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6C117C1AC77F2500355144 /* CodeSampleCell.swift */; };
+		6A6C117F1AC7820F00355144 /* CodeSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6C117E1AC7820F00355144 /* CodeSampleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +41,11 @@
 		4BBCDF551AC34511008D0D9F /* GraveyardSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraveyardSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BBCDF5A1AC34511008D0D9F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4BBCDF5B1AC34511008D0D9F /* GraveyardSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraveyardSwiftTests.swift; sourceTree = "<group>"; };
+		6A6C11761AC77B7500355144 /* TemporaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemporaryViewController.swift; sourceTree = "<group>"; };
+		6A6C11781AC77BC000355144 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		6A6C117A1AC77C2400355144 /* TransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionDelegate.swift; sourceTree = "<group>"; };
+		6A6C117C1AC77F2500355144 /* CodeSampleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeSampleCell.swift; sourceTree = "<group>"; };
+		6A6C117E1AC7820F00355144 /* CodeSampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeSampleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,12 +87,17 @@
 		4BBCDF421AC34511008D0D9F /* GraveyardSwift */ = {
 			isa = PBXGroup;
 			children = (
+				6A6C11781AC77BC000355144 /* Extensions.swift */,
 				4BBCDF451AC34511008D0D9F /* AppDelegate.swift */,
 				4BBCDF471AC34511008D0D9F /* ViewController.swift */,
 				4BBCDF491AC34511008D0D9F /* Main.storyboard */,
 				4BBCDF4C1AC34511008D0D9F /* Images.xcassets */,
 				4BBCDF4E1AC34511008D0D9F /* LaunchScreen.xib */,
 				4BBCDF431AC34511008D0D9F /* Supporting Files */,
+				6A6C11761AC77B7500355144 /* TemporaryViewController.swift */,
+				6A6C117A1AC77C2400355144 /* TransitionDelegate.swift */,
+				6A6C117C1AC77F2500355144 /* CodeSampleCell.swift */,
+				6A6C117E1AC7820F00355144 /* CodeSampleViewController.swift */,
 			);
 			path = GraveyardSwift;
 			sourceTree = "<group>";
@@ -213,7 +228,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BBCDF481AC34511008D0D9F /* ViewController.swift in Sources */,
+				6A6C117B1AC77C2400355144 /* TransitionDelegate.swift in Sources */,
+				6A6C117D1AC77F2500355144 /* CodeSampleCell.swift in Sources */,
+				6A6C11771AC77B7500355144 /* TemporaryViewController.swift in Sources */,
 				4BBCDF461AC34511008D0D9F /* AppDelegate.swift in Sources */,
+				6A6C11791AC77BC000355144 /* Extensions.swift in Sources */,
+				6A6C117F1AC7820F00355144 /* CodeSampleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +427,7 @@
 				4BBCDF611AC34511008D0D9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4BBCDF621AC34511008D0D9F /* Build configuration list for PBXNativeTarget "GraveyardSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +436,7 @@
 				4BBCDF641AC34511008D0D9F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
