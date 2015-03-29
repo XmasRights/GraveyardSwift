@@ -16,7 +16,11 @@ extension UIColor
         {
             return CGFloat(arc4random()) / CGFloat(UINT32_MAX)
         }
-        
         return UIColor(red: random(), green: random(), blue: random(), alpha: 1.0)
+    }
+    
+    class func darkTurquoiseColour() -> UIColor
+    {
+        return UIColor(red: 0, green: 153/255.0, blue: 76/255.0, alpha: 1.0)
     }
 }
