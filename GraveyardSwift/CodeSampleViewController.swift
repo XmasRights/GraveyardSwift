@@ -23,6 +23,6 @@ class CodeSampleViewController: UIViewController, CodeSampleCellGenerator
     
     func formatCell(inout cell: CodeSampleCell)
     {
-        cell.titleLabel.text = self.title
+        cell.titleLabel.text = "Empty"
     }
 }

@@ -11,13 +11,12 @@ import QuartzCore
 
 class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout
 {
-    var data = [ShapeLayerCodeSample(), CodeSampleViewController()]
+    var data = [ShapeLayerCodeSample(), BlurCodeSample(), CodeSampleViewController()]
     let transitionDelegate: TransitionDelegate = TransitionDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Code Samples"
-        collectionView?.backgroundColor = .whiteColor()
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell

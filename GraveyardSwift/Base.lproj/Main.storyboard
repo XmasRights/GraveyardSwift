@@ -28,6 +28,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="yVz-A0-59E">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lzI-EE-Zr7">
                             <size key="itemSize" width="120" height="160"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -42,29 +43,49 @@
                                     <rect key="frame" x="0.0" y="0.0" width="120" height="160"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHb-GT-ViG">
-                                            <rect key="frame" x="8" y="131" width="104" height="21"/>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q8B-Vb-3MI">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="160"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHb-GT-ViG">
+                                            <rect key="frame" x="0.0" y="131" width="120" height="29"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q8B-Vb-3MI">
-                                            <rect key="frame" x="8" y="8" width="104" height="115"/>
-                                        </imageView>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="zHb-GT-ViG" firstAttribute="top" secondItem="q8B-Vb-3MI" secondAttribute="bottom" constant="8" id="0jg-6s-OtI"/>
                                     <constraint firstItem="zHb-GT-ViG" firstAttribute="bottom" secondItem="srH-v9-r8t" secondAttribute="bottomMargin" id="2nB-Oc-y9z"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="zHb-GT-ViG" secondAttribute="trailing" constant="-8" id="5Uz-Nu-wHt"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="zHb-GT-ViG" secondAttribute="bottom" constant="-8" id="ACs-Cz-wIk"/>
                                     <constraint firstItem="zHb-GT-ViG" firstAttribute="trailing" secondItem="srH-v9-r8t" secondAttribute="trailingMargin" id="AtJ-ut-9NG"/>
                                     <constraint firstItem="q8B-Vb-3MI" firstAttribute="trailing" secondItem="srH-v9-r8t" secondAttribute="trailingMargin" id="Cbl-pa-Cgg"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="q8B-Vb-3MI" secondAttribute="trailing" constant="-8" id="EwX-Lm-NGa"/>
+                                    <constraint firstItem="q8B-Vb-3MI" firstAttribute="top" secondItem="srH-v9-r8t" secondAttribute="topMargin" constant="-8" id="FAa-Od-ULP"/>
+                                    <constraint firstItem="q8B-Vb-3MI" firstAttribute="leading" secondItem="srH-v9-r8t" secondAttribute="leadingMargin" constant="-8" id="G7z-R9-RyJ"/>
+                                    <constraint firstItem="zHb-GT-ViG" firstAttribute="leading" secondItem="srH-v9-r8t" secondAttribute="leadingMargin" constant="-8" id="HGR-2u-5Sz"/>
                                     <constraint firstItem="zHb-GT-ViG" firstAttribute="leading" secondItem="srH-v9-r8t" secondAttribute="leadingMargin" id="N5m-Xn-hdp"/>
                                     <constraint firstItem="q8B-Vb-3MI" firstAttribute="leading" secondItem="srH-v9-r8t" secondAttribute="leadingMargin" id="NBq-YH-sme"/>
                                     <constraint firstItem="zHb-GT-ViG" firstAttribute="top" secondItem="q8B-Vb-3MI" secondAttribute="bottom" constant="8" id="ieg-du-VZz"/>
                                     <constraint firstItem="q8B-Vb-3MI" firstAttribute="top" secondItem="srH-v9-r8t" secondAttribute="topMargin" id="mh1-JA-ghE"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="q8B-Vb-3MI" secondAttribute="bottom" constant="-8" id="oAI-Kd-nSV"/>
+                                    <constraint firstItem="zHb-GT-ViG" firstAttribute="top" secondItem="srH-v9-r8t" secondAttribute="topMargin" constant="123" id="pp4-Gc-5oE"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Cbl-pa-Cgg"/>
+                                        <exclude reference="NBq-YH-sme"/>
+                                        <exclude reference="mh1-JA-ghE"/>
+                                        <exclude reference="0jg-6s-OtI"/>
+                                        <exclude reference="2nB-Oc-y9z"/>
+                                        <exclude reference="AtJ-ut-9NG"/>
+                                        <exclude reference="N5m-Xn-hdp"/>
+                                        <exclude reference="ieg-du-VZz"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="imageView" destination="q8B-Vb-3MI" id="Pdl-Vx-54k"/>
                                     <outlet property="titleLabel" destination="zHb-GT-ViG" id="9A9-eJ-hMo"/>
