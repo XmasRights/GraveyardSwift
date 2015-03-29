@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BQ3-6U-Qgw">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Navigation Controller-->
@@ -28,7 +29,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lzI-EE-Zr7">
-                            <size key="itemSize" width="50" height="50"/>
+                            <size key="itemSize" width="120" height="160"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -38,10 +39,36 @@
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="120" height="160"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHb-GT-ViG">
+                                            <rect key="frame" x="8" y="131" width="104" height="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q8B-Vb-3MI">
+                                            <rect key="frame" x="8" y="8" width="104" height="115"/>
+                                        </imageView>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="zHb-GT-ViG" firstAttribute="top" secondItem="q8B-Vb-3MI" secondAttribute="bottom" constant="8" id="0jg-6s-OtI"/>
+                                    <constraint firstItem="zHb-GT-ViG" firstAttribute="bottom" secondItem="srH-v9-r8t" secondAttribute="bottomMargin" id="2nB-Oc-y9z"/>
+                                    <constraint firstItem="zHb-GT-ViG" firstAttribute="trailing" secondItem="srH-v9-r8t" secondAttribute="trailingMargin" id="AtJ-ut-9NG"/>
+                                    <constraint firstItem="q8B-Vb-3MI" firstAttribute="trailing" secondItem="srH-v9-r8t" secondAttribute="trailingMargin" id="Cbl-pa-Cgg"/>
+                                    <constraint firstItem="zHb-GT-ViG" firstAttribute="leading" secondItem="srH-v9-r8t" secondAttribute="leadingMargin" id="N5m-Xn-hdp"/>
+                                    <constraint firstItem="q8B-Vb-3MI" firstAttribute="leading" secondItem="srH-v9-r8t" secondAttribute="leadingMargin" id="NBq-YH-sme"/>
+                                    <constraint firstItem="zHb-GT-ViG" firstAttribute="top" secondItem="q8B-Vb-3MI" secondAttribute="bottom" constant="8" id="ieg-du-VZz"/>
+                                    <constraint firstItem="q8B-Vb-3MI" firstAttribute="top" secondItem="srH-v9-r8t" secondAttribute="topMargin" id="mh1-JA-ghE"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="imageView" destination="q8B-Vb-3MI" id="Pdl-Vx-54k"/>
+                                    <outlet property="titleLabel" destination="zHb-GT-ViG" id="9A9-eJ-hMo"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>

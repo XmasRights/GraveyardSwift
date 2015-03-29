@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CodeSampleViewController: UIViewController
+class CodeSampleViewController: UIViewController, CodeSampleCellGenerator
 {
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,5 +19,10 @@ class CodeSampleViewController: UIViewController
     
     func viewTapped() {
         dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    func formatCell(inout cell: CodeSampleCell)
+    {
+        cell.titleLabel.text = self.title
     }
 }

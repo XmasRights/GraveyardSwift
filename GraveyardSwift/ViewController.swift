@@ -11,38 +11,25 @@ import QuartzCore
 
 class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout
 {
-
-    var colorsArray = [UIColor.redColor(), UIColor.greenColor(), UIColor.yellowColor(), UIColor.blueColor()]
+    var data = [CodeSampleViewController](count: 12, repeatedValue: CodeSampleViewController())
     let transitionDelegate: TransitionDelegate = TransitionDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "iOS 7 Colors"
-        collectionView?.backgroundColor = .clearColor()
-    }
-    
-    override func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath)
-    {
-        cell.layer.borderWidth = 1.0
-        cell.layer.cornerRadius = 4.0
-        cell.layer.borderColor = UIColor.whiteColor().CGColor
+        title = "Code Samples"
+        collectionView?.backgroundColor = .whiteColor()
     }
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
         var cell: CodeSampleCell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as CodeSampleCell
-        cell.backgroundColor = colorsArray[indexPath.row]
+        data[indexPath.row].formatCell(&cell)
         return cell
     }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     {
-        return colorsArray.count
-    }
-    
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize
-    {
-        return CGSizeMake(200, 240)
+        return data.count
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets
@@ -62,7 +49,7 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
         transitionDelegate.openingFrame = frameToOpenFrom
         
         let detailViewController = CodeSampleViewController()
-        detailViewController.view.backgroundColor = colorsArray[indexPath.row]
+        detailViewController.view.backgroundColor = .greenColor()
         detailViewController.transitioningDelegate = transitionDelegate
         detailViewController.modalPresentationStyle = .Custom
         presentViewController(detailViewController, animated: true, completion: nil)
