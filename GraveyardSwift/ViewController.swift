@@ -11,7 +11,7 @@ import QuartzCore
 
 class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout
 {
-    var data = [CodeSampleViewController](count: 12, repeatedValue: CodeSampleViewController())
+    var data = [ShapeLayerCodeSample(), CodeSampleViewController()]
     let transitionDelegate: TransitionDelegate = TransitionDelegate()
     
     override func viewDidLoad() {
@@ -48,8 +48,7 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
         let frameToOpenFrom = collectionView.convertRect(attributesFrame!, toView: collectionView.superview)
         transitionDelegate.openingFrame = frameToOpenFrom
         
-        let detailViewController = CodeSampleViewController()
-        detailViewController.view.backgroundColor = .greenColor()
+        let detailViewController = data[indexPath.row]
         detailViewController.transitioningDelegate = transitionDelegate
         detailViewController.modalPresentationStyle = .Custom
         presentViewController(detailViewController, animated: true, completion: nil)

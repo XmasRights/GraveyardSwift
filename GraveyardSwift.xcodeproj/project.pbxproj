@@ -17,6 +17,8 @@
 		6A6C117B1AC77C2400355144 /* TransitionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6C117A1AC77C2400355144 /* TransitionDelegate.swift */; };
 		6A6C117D1AC77F2500355144 /* CodeSampleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6C117C1AC77F2500355144 /* CodeSampleCell.swift */; };
 		6A6C117F1AC7820F00355144 /* CodeSampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6C117E1AC7820F00355144 /* CodeSampleViewController.swift */; };
+		6A6C11851AC790FB00355144 /* CAShapeLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6C11841AC790FB00355144 /* CAShapeLayer.swift */; };
+		6A6C11891AC8176100355144 /* CAShapeProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A6C11881AC8176100355144 /* CAShapeProgressBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +46,8 @@
 		6A6C117A1AC77C2400355144 /* TransitionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionDelegate.swift; sourceTree = "<group>"; };
 		6A6C117C1AC77F2500355144 /* CodeSampleCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeSampleCell.swift; sourceTree = "<group>"; };
 		6A6C117E1AC7820F00355144 /* CodeSampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeSampleViewController.swift; sourceTree = "<group>"; };
+		6A6C11841AC790FB00355144 /* CAShapeLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAShapeLayer.swift; sourceTree = "<group>"; };
+		6A6C11881AC8176100355144 /* CAShapeProgressBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CAShapeProgressBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +156,8 @@
 		6A6C11831AC78E8A00355144 /* CodeSamples */ = {
 			isa = PBXGroup;
 			children = (
+				6A6C11841AC790FB00355144 /* CAShapeLayer.swift */,
+				6A6C11881AC8176100355144 /* CAShapeProgressBarView.swift */,
 			);
 			name = CodeSamples;
 			sourceTree = "<group>";
@@ -256,6 +262,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A6C11851AC790FB00355144 /* CAShapeLayer.swift in Sources */,
+				6A6C11891AC8176100355144 /* CAShapeProgressBarView.swift in Sources */,
 				4BBCDF481AC34511008D0D9F /* ViewController.swift in Sources */,
 				6A6C117B1AC77C2400355144 /* TransitionDelegate.swift in Sources */,
 				6A6C117D1AC77F2500355144 /* CodeSampleCell.swift in Sources */,
