@@ -21,7 +21,7 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
     
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell
     {
-        var cell: CodeSampleCell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as CodeSampleCell
+        var cell: CodeSampleCell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! CodeSampleCell
         data[indexPath.row].formatCell(&cell)
         return cell
     }
@@ -40,7 +40,7 @@ class ViewController: UICollectionViewController, UICollectionViewDelegateFlowLa
     {
         collectionView.deselectItemAtIndexPath(indexPath, animated: true)
         
-        let cell: CodeSampleCell = collectionView.cellForItemAtIndexPath(indexPath) as CodeSampleCell
+        let cell: CodeSampleCell = collectionView.cellForItemAtIndexPath(indexPath) as! CodeSampleCell
         
         let attributes = collectionView.layoutAttributesForItemAtIndexPath(indexPath)
         let attributesFrame = attributes?.frame

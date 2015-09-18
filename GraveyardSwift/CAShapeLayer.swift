@@ -52,12 +52,12 @@ class ShapeLayerCodeSample: CodeSampleViewController
     private func constructActionButton()
     {
         self.view.addSubview(self.actionButton)
-        self.actionButton.setTranslatesAutoresizingMaskIntoConstraints(false)
+        self.actionButton.translatesAutoresizingMaskIntoConstraints = false
         self.actionButton.setTitle("Animate", forState: UIControlState.Normal)
         self.actionButton.addTarget(self, action: "animateButtonPressed", forControlEvents:.TouchUpInside)
         
-        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[button]-|", options: NSLayoutFormatOptions(0), metrics: nil, views: ["button" : self.actionButton]))
-        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[button(40)]-16-|", options: NSLayoutFormatOptions(0), metrics: nil, views: ["button" : self.actionButton]))
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[button]-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["button" : self.actionButton]))
+        self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[button(40)]-16-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["button" : self.actionButton]))
     }
     
     func animateButtonPressed()

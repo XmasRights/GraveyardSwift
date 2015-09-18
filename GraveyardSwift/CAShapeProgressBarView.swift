@@ -17,11 +17,11 @@ class CAShapeProgressBar: UIView
     // MARK: Initialisers
     // =============================================================
     
-    required init(coder aDecoder: NSCoder)
+    required init?(coder aDecoder: NSCoder)
     {
         progressLabel = UILabel()
         
-        super.init()
+        super.init(coder: aDecoder)
         
         initProgressLayer()
         initLabel()
@@ -49,7 +49,7 @@ class CAShapeProgressBar: UIView
         let radius      = (CGRectGetWidth(frame) / 2) - edge
         
         
-        var gradiantMask = gradientMask()
+        let gradiantMask = gradientMask()
         
         progressLayer.path              = UIBezierPath( arcCenter: centrePoint,
                                                         radius: radius,
@@ -75,7 +75,7 @@ class CAShapeProgressBar: UIView
         progressLabel.textAlignment = .Center
         progressLabel.text = ""
         progressLabel.font = UIFont(name: "HelveticaNeue-UltraLight", size: 40.0)
-        progressLabel.setTranslatesAutoresizingMaskIntoConstraints(false)
+        progressLabel.translatesAutoresizingMaskIntoConstraints = false
         addSubview(progressLabel)
         
         addConstraint(NSLayoutConstraint(item: self, attribute: .CenterX, relatedBy: .Equal, toItem: progressLabel, attribute: .CenterX, multiplier: 1.0, constant: 0.0))
@@ -124,7 +124,7 @@ class CAShapeProgressBar: UIView
         progressLayer.addAnimation(animation, forKey: "strokeEnd")
     }
     
-    override func animationDidStop(anim: CAAnimation!, finished flag: Bool)
+    override func animationDidStop(anim: CAAnimation, finished flag: Bool)
     {
         progressLabel.text = "Done"
     }

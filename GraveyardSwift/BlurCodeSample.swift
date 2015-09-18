@@ -45,9 +45,9 @@ class BlurCodeSample : CodeSampleViewController
             self.view.addSubview(view)
             
             view.contentMode = .ScaleAspectFit
-            view.setTranslatesAutoresizingMaskIntoConstraints(false)
-            self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[i]-|", options: NSLayoutFormatOptions(0), metrics: nil, views: ["i" : view]))
-            self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-[i]-|", options: NSLayoutFormatOptions(0), metrics: nil, views: ["i" : view]))
+            view.translatesAutoresizingMaskIntoConstraints = false
+            self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[i]-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["i" : view]))
+            self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|-[i]-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["i" : view]))
         }
     }
     
@@ -59,9 +59,9 @@ class BlurCodeSample : CodeSampleViewController
         {
             self.view.insertSubview(effect, aboveSubview: self.imageView!)
             
-            effect.setTranslatesAutoresizingMaskIntoConstraints(false)
-            self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[i]|", options: NSLayoutFormatOptions(0), metrics: nil, views: ["i" : effect]))
-            self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[i]|", options: NSLayoutFormatOptions(0), metrics: nil, views: ["i" : effect]))
+            effect.translatesAutoresizingMaskIntoConstraints = false
+            self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[i]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["i" : effect]))
+            self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[i]|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["i" : effect]))
         }
     }
     
@@ -78,9 +78,9 @@ class BlurCodeSample : CodeSampleViewController
             
             control.selectedSegmentIndex = 0
             control.addTarget(self, action: "segmentedControlChanged:", forControlEvents: UIControlEvents.ValueChanged)
-            control.setTranslatesAutoresizingMaskIntoConstraints(false)
-            self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[i]-|", options: NSLayoutFormatOptions(0), metrics: nil, views: ["i" : control]))
-            self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[i(40)]-16-|", options: NSLayoutFormatOptions(0), metrics: nil, views: ["i" : control]))
+            control.translatesAutoresizingMaskIntoConstraints = false
+            self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|-[i]-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["i" : control]))
+            self.view.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[i(40)]-16-|", options: NSLayoutFormatOptions(rawValue: 0), metrics: nil, views: ["i" : control]))
         }
     }
     

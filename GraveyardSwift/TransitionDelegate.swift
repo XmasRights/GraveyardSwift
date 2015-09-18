@@ -29,7 +29,7 @@ class TransitionPresentationAnimator : NSObject, UIViewControllerAnimatedTransit
 {
     var openingFrame: CGRect?
     
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval
     {
         return 0.5
     }
@@ -51,12 +51,12 @@ class TransitionPresentationAnimator : NSObject, UIViewControllerAnimatedTransit
         
         let snapshotView = toViewController.view.resizableSnapshotViewFromRect(toViewController.view.frame, afterScreenUpdates: true, withCapInsets: UIEdgeInsetsZero)
         snapshotView.frame = openingFrame!
-        containerView.addSubview(snapshotView)
+        containerView!.addSubview(snapshotView)
         
         toViewController.view.alpha = 0.0
-        containerView.addSubview(toViewController.view)
+        containerView!.addSubview(toViewController.view)
         
-        UIView.animateWithDuration(animationDuration, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 20.0, options: nil,
+        UIView.animateWithDuration(animationDuration, delay: 0.0, usingSpringWithDamping: 0.8, initialSpringVelocity: 20.0, options: [],
             animations: { () -> Void in
                 snapshotView.frame = fromViewController.view.frame
             }, completion: { (finished) -> Void in
@@ -72,7 +72,7 @@ class TransitionDismissalAnimator: NSObject, UIViewControllerAnimatedTransitioni
 {
     var openingFrame: CGRect?
     
-    func transitionDuration(transitionContext: UIViewControllerContextTransitioning) -> NSTimeInterval {
+    func transitionDuration(transitionContext: UIViewControllerContextTransitioning?) -> NSTimeInterval {
         return 0.5
     }
     
@@ -84,7 +84,7 @@ class TransitionDismissalAnimator: NSObject, UIViewControllerAnimatedTransitioni
         let animationDuration = self .transitionDuration(transitionContext)
         
         let snapshotView = fromViewController.view.resizableSnapshotViewFromRect(fromViewController.view.bounds, afterScreenUpdates: true, withCapInsets: UIEdgeInsetsZero)
-        containerView.addSubview(snapshotView)
+        containerView!.addSubview(snapshotView)
         
         fromViewController.view.alpha = 0.0
         
