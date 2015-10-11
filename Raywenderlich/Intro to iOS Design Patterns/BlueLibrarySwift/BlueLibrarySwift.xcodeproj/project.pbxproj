@@ -83,15 +83,15 @@
 		101DD6C71A052EDE00161F0D /* BlueLibrarySwift */ = {
 			isa = PBXGroup;
 			children = (
+				4B56385F1BCB2136004FA9AC /* Model */,
+				4B5638601BCB213D004FA9AC /* View */,
+				4B5638611BCB2142004FA9AC /* Controller */,
 				101DD6EA1A052EE400161F0D /* API */,
 				101DD6CA1A052EDE00161F0D /* AppDelegate.swift */,
-				101DD6CC1A052EDE00161F0D /* ViewController.swift */,
 				101DD6CE1A052EDE00161F0D /* Main.storyboard */,
 				101DD6D11A052EDE00161F0D /* Images.xcassets */,
 				101DD6D31A052EDE00161F0D /* LaunchScreen.xib */,
 				101DD6C81A052EDE00161F0D /* Supporting Files */,
-				4B36ADA61BCB19CB007EEB2A /* Album.swift */,
-				4B56385D1BCB1C50004FA9AC /* AlbumView.swift */,
 			);
 			path = BlueLibrarySwift;
 			sourceTree = "<group>";
@@ -127,6 +127,30 @@
 				101DD6EB1A052F0E00161F0D /* HTTPClient.swift */,
 			);
 			name = API;
+			sourceTree = "<group>";
+		};
+		4B56385F1BCB2136004FA9AC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4B36ADA61BCB19CB007EEB2A /* Album.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4B5638601BCB213D004FA9AC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4B56385D1BCB1C50004FA9AC /* AlbumView.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		4B5638611BCB2142004FA9AC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				101DD6CC1A052EDE00161F0D /* ViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
