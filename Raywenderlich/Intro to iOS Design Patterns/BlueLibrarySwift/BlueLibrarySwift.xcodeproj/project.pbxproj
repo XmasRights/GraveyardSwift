@@ -15,6 +15,7 @@
 		101DD6E11A052EDE00161F0D /* BlueLibrarySwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101DD6E01A052EDE00161F0D /* BlueLibrarySwiftTests.swift */; };
 		101DD6EC1A052F0E00161F0D /* HTTPClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101DD6EB1A052F0E00161F0D /* HTTPClient.swift */; };
 		4B11EFBE1BD1A3EC00927F82 /* AlbumExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B11EFBD1BD1A3EC00927F82 /* AlbumExtensions.swift */; settings = {ASSET_TAGS = (); }; };
+		4B11EFC01BD1AF9500927F82 /* HorizontalScroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B11EFBF1BD1AF9500927F82 /* HorizontalScroller.swift */; settings = {ASSET_TAGS = (); }; };
 		4B36ADA71BCB19CB007EEB2A /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B36ADA61BCB19CB007EEB2A /* Album.swift */; settings = {ASSET_TAGS = (); }; };
 		4B56385E1BCB1C50004FA9AC /* AlbumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B56385D1BCB1C50004FA9AC /* AlbumView.swift */; settings = {ASSET_TAGS = (); }; };
 		4B5638631BCB22DD004FA9AC /* LibraryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B5638621BCB22DD004FA9AC /* LibraryAPI.swift */; settings = {ASSET_TAGS = (); }; };
@@ -44,6 +45,7 @@
 		101DD6E01A052EDE00161F0D /* BlueLibrarySwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlueLibrarySwiftTests.swift; sourceTree = "<group>"; };
 		101DD6EB1A052F0E00161F0D /* HTTPClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPClient.swift; sourceTree = "<group>"; };
 		4B11EFBD1BD1A3EC00927F82 /* AlbumExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumExtensions.swift; sourceTree = "<group>"; };
+		4B11EFBF1BD1AF9500927F82 /* HorizontalScroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalScroller.swift; sourceTree = "<group>"; };
 		4B36ADA61BCB19CB007EEB2A /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		4B56385D1BCB1C50004FA9AC /* AlbumView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumView.swift; sourceTree = "<group>"; };
 		4B5638621BCB22DD004FA9AC /* LibraryAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LibraryAPI.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 			isa = PBXGroup;
 			children = (
 				4B56385D1BCB1C50004FA9AC /* AlbumView.swift */,
+				4B11EFBF1BD1AF9500927F82 /* HorizontalScroller.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -268,6 +271,7 @@
 				4B11EFBE1BD1A3EC00927F82 /* AlbumExtensions.swift in Sources */,
 				101DD6CB1A052EDE00161F0D /* AppDelegate.swift in Sources */,
 				4B5638631BCB22DD004FA9AC /* LibraryAPI.swift in Sources */,
+				4B11EFC01BD1AF9500927F82 /* HorizontalScroller.swift in Sources */,
 				101DD6EC1A052F0E00161F0D /* HTTPClient.swift in Sources */,
 				4B56385E1BCB1C50004FA9AC /* AlbumView.swift in Sources */,
 				4B36ADA71BCB19CB007EEB2A /* Album.swift in Sources */,
