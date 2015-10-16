@@ -62,6 +62,17 @@ class HorizontalScroller: UIView
         let tapRecognoiser = UITapGestureRecognizer(target: self, action: Selector("scrollerTapped"))
         scroller.addGestureRecognizer(tapRecognoiser)
     }
+    
+    
+    // ===================================================
+    
+    override func didMoveToSuperview()
+    {
+        reload()
+    }
+    
+    
+    // ===================================================
 
     func scrollerTapped(gesture: UITapGestureRecognizer)
     {
@@ -82,4 +93,45 @@ class HorizontalScroller: UIView
     }
     
     
+    // ===================================================
+
+    func viewAtIndex(index: Int) -> UIView
+    {
+        return viewArray[index]
+    }
+    
+    func reload()
+    {
+        if let delegate = delegate
+        {
+            viewArray = []
+            let views = scroller.subviews
+            
+            for view in views
+            {
+                view.removeFromSuperview()
+            }
+            
+            var xValue = VIEWS_OFFSET
+            for index in 0..<delegate.numberOfViewsForHorizontalScroller(self)
+            {
+                xValue += VIEW_PADDING
+                let view = delegate.horizontalScrollerViewAtIndex(self, index: index)
+                view.frame = CGRectMake(CGFloat(xValue), CGFloat(VIEW_PADDING), CGFloat(VIEW_DIMENSIONS), CGFloat(VIEW_DIMENSIONS))
+                scroller.addSubview(view)
+                xValue += VIEW_DIMENSIONS + VIEW_PADDING
+
+                viewArray.append(view)
+            }
+            
+            scroller.contentSize = CGSizeMake(CGFloat(xValue + VIEWS_OFFSET), frame.size.height)
+            
+            
+            if let initialView = delegate.initialViewIndex?(self)
+            {
+                scroller.setContentOffset(CGPoint(x: CGFloat(initialView)*CGFloat((VIEW_DIMENSIONS + (2 * VIEW_PADDING))), y: 0), animated: true)
+            }
+        }
+    }
 }
+
