@@ -46,6 +46,7 @@ class HorizontalScroller: UIView
     func initialiseScrollView()
     {
         scroller = UIScrollView()
+        scroller.delegate = self
         addSubview(scroller)
         
         scroller.translatesAutoresizingMaskIntoConstraints = false
@@ -100,6 +101,19 @@ class HorizontalScroller: UIView
         return viewArray[index]
     }
     
+    func centerCurrentView()
+    {
+        var xFinal = Int(scroller.contentOffset.x) + (VIEWS_OFFSET/2) + VIEW_PADDING
+        let viewIndex = xFinal / (VIEW_DIMENSIONS + (2*VIEW_PADDING))
+        xFinal = viewIndex * (VIEW_DIMENSIONS + (2*VIEW_PADDING))
+        scroller.setContentOffset(CGPoint(x: xFinal, y: 0), animated: true)
+        
+        if let delegate = delegate
+        {
+            delegate.horizontalScrollerClickedViewAtIndex(self, index: Int(viewIndex))
+        }  
+    }
+    
     func reload()
     {
         if let delegate = delegate
@@ -132,6 +146,22 @@ class HorizontalScroller: UIView
                 scroller.setContentOffset(CGPoint(x: CGFloat(initialView)*CGFloat((VIEW_DIMENSIONS + (2 * VIEW_PADDING))), y: 0), animated: true)
             }
         }
+    }
+}
+
+extension HorizontalScroller: UIScrollViewDelegate
+{
+    func scrollViewDidEndDragging(scrollView: UIScrollView, willDecelerate decelerate: Bool)
+    {
+        if !decelerate
+        {
+            centerCurrentView()
+        }
+    }
+    
+    func scrollViewDidEndDecelerating(scrollView: UIScrollView)
+    {
+        centerCurrentView()
     }
 }
 
