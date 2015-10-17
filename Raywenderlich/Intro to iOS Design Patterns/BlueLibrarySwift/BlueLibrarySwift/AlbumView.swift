@@ -19,7 +19,7 @@ class AlbumView: UIView
         commonInit();
     }
     
-    override init(frame: CGRect)
+    init(frame: CGRect, albumCover: String)
     {
         super.init(frame: frame)
         commonInit()

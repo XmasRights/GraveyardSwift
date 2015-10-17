@@ -26,8 +26,9 @@ class ViewController: UIViewController
 {
     typealias AlbumData = (titles: [String], values:[String])
 
-	@IBOutlet var dataTable: UITableView!
-	@IBOutlet var toolbar:   UIToolbar!
+	@IBOutlet var dataTable:     UITableView!
+	@IBOutlet var toolbar:       UIToolbar!
+    @IBOutlet weak var scroller: HorizontalScroller!
     
     private   var allAlbums         = [Album]()
     private   var currentAlbumData: AlbumData?
@@ -50,12 +51,31 @@ class ViewController: UIViewController
         view.addSubview(dataTable)
         
         self.showDataForAlbum(currentAlbumIndex)
+        
+        scroller.delegate = self
+        reloadScroller()
 	}
 
 	override func didReceiveMemoryWarning() {
 		super.didReceiveMemoryWarning()
 		// Dispose of any resources that can be recreated.
 	}
+    
+    func reloadScroller()
+    {
+        allAlbums = LibraryAPI.sharedInstance.getAlbums()
+        if currentAlbumIndex < 0
+        {
+            currentAlbumIndex = 0
+        }
+        else if currentAlbumIndex >= allAlbums.count
+        {
+            currentAlbumIndex = allAlbums.count - 1
+        }
+        
+        scroller.reload()
+        showDataForAlbum(currentAlbumIndex)
+    }
     
     
     // ===================================================
@@ -107,3 +127,39 @@ extension ViewController: UITableViewDelegate
     
 }
 
+extension ViewController: HorizontalScrollerDelegate
+{
+    func horizontalScrollerClickedViewAtIndex(scroller: HorizontalScroller, index: Int)
+    {
+        let previousAlbumView = scroller.viewAtIndex(currentAlbumIndex) as! AlbumView
+        previousAlbumView.highlightAlbum(didHightlightView: false)
+        
+        currentAlbumIndex = index
+        
+        let albumView = scroller.viewAtIndex(index) as! AlbumView
+        albumView.highlightAlbum(didHightlightView: true)
+        
+        showDataForAlbum(index)
+    }
+    
+    func horizontalScrollerViewAtIndex(scroller: HorizontalScroller, index: Int) -> UIView
+    {
+        let album     = allAlbums[index]
+        let albumView = AlbumView(frame: CGRectMake(0, 0, 100, 100), albumCover: album.coverURL)
+        
+        if currentAlbumIndex == index
+        {
+            albumView.highlightAlbum(didHightlightView: true)
+        }
+        else
+        {
+            albumView.highlightAlbum(didHightlightView: false)
+        }
+        return albumView
+    }
+    
+    func numberOfViewsForHorizontalScroller(scroller: HorizontalScroller) -> Int {
+        return allAlbums.count
+    }
+    
+}
