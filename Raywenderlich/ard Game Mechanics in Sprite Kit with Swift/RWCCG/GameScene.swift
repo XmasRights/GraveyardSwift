@@ -30,6 +30,7 @@ class GameScene: SKScene {
             {
                 touchedCard.zPosition = 15
                 touchedCard.lift()
+                touchedCard.startWiggle()
             }
         }
     }
@@ -54,6 +55,7 @@ class GameScene: SKScene {
             {
                 touchedCard.zPosition = 0
                 touchedCard.drop()
+                touchedCard.stopWiggle()
             }
         }
     }
