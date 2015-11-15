@@ -21,4 +21,20 @@ class Card: SKSpriteNode
         let cardTexture = SKTexture(imageNamed: imageNamed)
         super.init(texture: cardTexture, color: UIColor.clearColor(), size: cardTexture.size())
     }
+
+
+    // =============================================================
+    
+    func lift()
+    {
+        let liftAction = SKAction.scaleTo(1.6, duration: 0.2)
+        self.runAction(liftAction)
+    }
+    
+    func drop()
+    {
+        let dropAction = SKAction.scaleTo(1.0, duration: 0.2)
+        self.runAction(dropAction)
+    }
+    
 }

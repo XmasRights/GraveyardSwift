@@ -24,9 +24,13 @@ class GameScene: SKScene {
     {
         for touch in touches
         {
-            let location    = touch.locationInNode(self)
-            let touchedNode = nodeAtPoint(location)
-            touchedNode.zPosition = 15
+            let location = touch.locationInNode(self)
+            
+            if let touchedCard = nodeAtPoint(location) as? Card
+            {
+                touchedCard.zPosition = 15
+                touchedCard.lift()
+            }
         }
     }
     
@@ -44,9 +48,13 @@ class GameScene: SKScene {
     {
         for touch in touches
         {
-            let location    = touch.locationInNode(self)
-            let touchedNode = nodeAtPoint(location)
-            touchedNode.zPosition = 0
+            let location = touch.locationInNode(self)
+            
+            if let touchedCard = nodeAtPoint(location) as? Card
+            {
+                touchedCard.zPosition = 0
+                touchedCard.drop()
+            }
         }
     }
     
