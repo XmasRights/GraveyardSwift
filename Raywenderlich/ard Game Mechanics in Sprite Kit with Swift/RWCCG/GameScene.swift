@@ -20,14 +20,34 @@ class GameScene: SKScene {
         addChild(bear)
     }
     
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?)
+    {
+        for touch in touches
+        {
+            let location    = touch.locationInNode(self)
+            let touchedNode = nodeAtPoint(location)
+            touchedNode.zPosition = 15
+        }
+    }
+    
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?)
     {
         for touch in touches
         {
             let location    = touch.locationInNode(self)
             let touchedNode = nodeAtPoint(location)
-            
             touchedNode.position = location
         }
     }
+    
+    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?)
+    {
+        for touch in touches
+        {
+            let location    = touch.locationInNode(self)
+            let touchedNode = nodeAtPoint(location)
+            touchedNode.zPosition = 0
+        }
+    }
+    
 }
